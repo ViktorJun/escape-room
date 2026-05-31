@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	color-scheme: dark;
+
+	--background: #1c1c1c;
+	--foreground: #f0f0f0;
+
+	--text-primary: #ffffff;
+	--text-secondary: #e5e5e5;
+
+	--accent: #f2890f;
+	--accent-hover: #ff9d2e;
+	--accent-active: #d97800;
+
+	--surface: #242424;
+	--surface-secondary: #2f2f2f;
+	--card: rgba(28, 28, 28, 0.88);
+
+	--border: rgba(198, 196, 194, 0.25);
+	--border-light: rgba(255, 255, 255, 0.12);
+
+	--overlay: rgba(0, 0, 0, 0.7);
+	--overlay-soft: rgba(0, 0, 0, 0.45);
+
+	--error: #d92929;
+	--success: #2f9e44;
+
+	--hover-twitter: #3a94e7;
+	--hover-instagram: #8a43ff;
+	--hover-youtube: #ff3535;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-text-primary: var(--text-primary);
+	--color-text-secondary: var(--text-secondary);
+
+	--color-accent: var(--accent);
+	--color-accent-hover: var(--accent-hover);
+	--color-accent-active: var(--accent-active);
+
+	--color-surface: var(--surface);
+	--color-surface-secondary: var(--surface-secondary);
+	--color-card: var(--card);
+
+	--color-border: var(--border);
+	--color-border-light: var(--border-light);
+
+	--color-overlay: var(--overlay);
+	--color-overlay-soft: var(--overlay-soft);
+
+	--color-error: var(--error);
+	--color-success: var(--success);
+
+	--color-hover-twitter: var(--hover-twitter);
+	--color-hover-instagram: var(--hover-instagram);
+	--color-hover-youtube: var(--hover-youtube);
+
+	--font-sans: var(--font-raleway, Arial, Helvetica, sans-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100vh;
+		margin: 0;
+		background: var(--background);
+		color: var(--foreground);
+		font-size: 16px;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	button,
+	input,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	img,
+	picture,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 }
