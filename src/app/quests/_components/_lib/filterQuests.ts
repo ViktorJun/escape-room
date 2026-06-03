@@ -1,4 +1,5 @@
 export type Quest = {
+	slug: string;
 	title: string;
 	playersMin: string;
 	playersMax: string;

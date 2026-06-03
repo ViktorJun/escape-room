@@ -3,35 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type navigateFeatures = {
+export type NavigateFeatures = {
 	href: string;
 	label: string;
 };
+type NavigateProps = {
+	featuresNav: NavigateFeatures[];
+};
 
-const features: navigateFeatures[] = [
-	{
-		href: "/quests",
-		label: "Квести",
-	},
-	{
-		href: "/reviews",
-		label: "Відгуки",
-	},
-	{
-		href: "/contacts",
-		label: "Контакти",
-	},
-	{
-		href: "/stock",
-		label: "Акції",
-	},
-];
-
-export function Navigate() {
+export function Navigate({ featuresNav }: NavigateProps) {
 	const pathname = usePathname();
 	return (
 		<nav className="flex items-center justify-center gap-6 lg:gap-15">
-			{features?.map((item) => {
+			{featuresNav?.map((item) => {
 				const isActive =
 					item.href === "/"
 						? pathname === item.href

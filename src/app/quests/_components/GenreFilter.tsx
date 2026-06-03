@@ -66,9 +66,11 @@ export function GenreFilter({ activeGenre = "" }: GenreFilterProps) {
 								aria-hidden="true"
 							/>
 							<span>{genre.title}</span>
-							{isActive && (
-								<span className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent xl:left-5 xl:right-5" />
-							)}
+							<span
+								className={`absolute bottom-0 left-3 right-3 h-0.5 origin-left bg-accent transition-transform duration-300 ${
+									isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+								}`}
+							/>
 						</Link>
 					);
 				})}
