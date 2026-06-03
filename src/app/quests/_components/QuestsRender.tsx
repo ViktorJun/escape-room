@@ -1,10 +1,7 @@
-import {
-	QuestCard,
-	type QuestsCardType,
-} from "@/app/quests/_components/QuestCard";
+import {QuestCard, QuestCardProps} from "@/app/quests/_components/QuestCard";
 
 type QuestsRenderProps = {
-	arrayQuests: QuestsCardType[];
+	arrayQuests: QuestCardProps[];
 };
 export function QuestsRender({ arrayQuests }: QuestsRenderProps) {
 	return (
