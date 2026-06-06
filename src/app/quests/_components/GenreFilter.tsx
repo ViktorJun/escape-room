@@ -56,7 +56,7 @@ export function GenreFilter({ activeGenre = "" }: GenreFilterProps) {
 						<Link
 							key={genre.value || "all"}
 							href={href}
-							className="relative flex shrink-0 items-center gap-2 border-r border-border px-3 pb-3 pt-2 text-sm last:border-r-0 xl:px-5 xl:text-base"
+							className="relative flex shrink-0 items-center gap-4 border-r border-border px-3 pb-3 pt-2 text-sm last:border-r-0 xl:px-5 xl:text-base"
 						>
 							<Image
 								src={genre.icon}
@@ -68,7 +68,9 @@ export function GenreFilter({ activeGenre = "" }: GenreFilterProps) {
 							<span>{genre.title}</span>
 							<span
 								className={`absolute bottom-0 left-3 right-3 h-0.5 origin-left bg-accent transition-transform duration-300 ${
-									isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+									isActive
+										? "scale-x-100"
+										: "scale-x-0 group-hover:scale-x-100"
 								}`}
 							/>
 						</Link>

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import {Quest} from "@/app/quests/_components/_lib/filterQuests";
-
-export type QuestCardProps = Omit<Quest, "genre">;
+import { Quest } from "@/app/quests/_components/_lib/filterQuests";
+import { QuestInfo, type QuestInfoProps } from "@/components/layout/QuestInfo";
+import { Fragment } from "react";
 
 export function QuestCard({
 	slug,
@@ -12,7 +12,19 @@ export function QuestCard({
 	level,
 	imageSrc,
 	imageAlt,
-}: QuestCardProps) {
+}: Quest) {
+	const QuestInfoFeatures: QuestInfoProps[] = [
+		{
+			src: "/icons/quests/icon-person.svg",
+			alt: "Person",
+			information: `${playersMin}-${playersMax} осіб`,
+		},
+		{
+			src: "/icons/quests/icon-puzzle.svg",
+			alt: "Puzzle",
+			information: `${level}`,
+		},
+	];
 	return (
 		<Link
 			href={`quests/${slug}`}
@@ -29,29 +41,20 @@ export function QuestCard({
 			<div className="absolute bottom-0 left-0 p-5">
 				<h3 className="text-xl font-semibold text-white">{title}</h3>
 				<div className="mt-2 flex items-center gap-3 text-sm text-white">
-					<div className="flex items-center gap-2">
-						<Image
-							src="/icons/quests/icon-person.svg"
-							alt="Person"
-							width={20}
-							height={20}
-							aria-hidden="true"
-						/>
-						<p className="lining-nums tabular-nums">
-							{`${playersMin}-${playersMax} осіб`}
-						</p>
-					</div>
-					<span className="h-4 w-px bg-white/60" />
-					<div className="flex items-center gap-2">
-						<Image
-							src="/icons/quests/icon-puzzle.svg"
-							alt="Puzzle"
-							width={20}
-							height={20}
-							aria-hidden="true"
-						/>
-						<p>{level}</p>
-					</div>
+					{QuestInfoFeatures?.map((item, index) => {
+						return (
+							<Fragment key={item.information}>
+								{index > 0 && (
+									<span className="h-4 w-px bg-white/60" />
+								)}
+								<QuestInfo
+									src={item.src}
+									alt={item.alt}
+									information={item.information}
+								/>
+							</Fragment>
+						);
+					})}
 				</div>
 			</div>
 		</Link>

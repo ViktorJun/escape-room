@@ -1,4 +1,4 @@
-import {QuestCard, QuestCardProps} from "@/app/quests/_components/QuestCard";
+import { QuestCard, QuestCardProps } from "@/app/quests/_components/QuestCard";
 
 type QuestsRenderProps = {
 	arrayQuests: QuestCardProps[];
