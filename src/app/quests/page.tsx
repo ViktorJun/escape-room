@@ -1,5 +1,8 @@
 import { GenreFilter } from "@/app/quests/_components/GenreFilter";
-import {filterQuests, Quest} from "@/app/quests/_components/_lib/filterQuests";
+import {
+	filterQuests,
+	Quest,
+} from "@/app/quests/_components/_lib/filterQuests";
 import { quests } from "@/data/quests";
 import { QuestsRender } from "@/app/quests/_components/QuestsRender";
 
@@ -11,7 +14,7 @@ export default async function QuestsPage({
 	const { genre = "" } = await searchParams;
 	const questsRender: Quest[] = filterQuests(quests, genre);
 	return (
-		<main className="flex flex-col gap-3 mx-auto max-w-[1536px] px-4 md:px-45 pt-10">
+		<main className="flex flex-col gap-4 mx-auto max-w-[1536px] px-4 md:px-45 pt-30">
 			<h3 className="text-accent text-lg">Квести у Києві</h3>
 			<h1 className="text-7xl font-bold">Виберіть тематику</h1>
 			<GenreFilter activeGenre={genre} />
