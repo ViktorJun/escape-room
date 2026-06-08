@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Quest } from "@/app/quests/_components/_lib/filterQuests";
+import { Quest } from "@/app/quests/_lib/filterQuests";
 import { QuestInfo, type QuestInfoProps } from "@/components/layout/QuestInfo";
 import { Fragment } from "react";
+
+type QuestsCardProps = Omit<Quest, 'genre'>;
 
 export function QuestCard({
 	slug,
@@ -12,7 +14,7 @@ export function QuestCard({
 	level,
 	imageSrc,
 	imageAlt,
-}: Quest) {
+}: QuestsCardProps) {
 	const QuestInfoFeatures: QuestInfoProps[] = [
 		{
 			src: "/icons/quests/icon-person.svg",

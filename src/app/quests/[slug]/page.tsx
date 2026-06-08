@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { aboutQuests } from "@/data/aboutQuests";
+import { aboutQuests } from "@/app/quests/_data/aboutQuests";
 import { Fragment } from "react";
 import { QuestInfo, type QuestInfoProps } from "@/components/layout/QuestInfo";
 import { QuestBooking } from "@/app/quests/_components/QuestBooking";

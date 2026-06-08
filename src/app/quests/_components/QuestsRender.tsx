@@ -1,7 +1,9 @@
-import { QuestCard, QuestCardProps } from "@/app/quests/_components/QuestCard";
+import { QuestCard } from "@/app/quests/_components/QuestCard";
+import { type Quest } from "@/app/quests/_lib/filterQuests";
 
+type QuestsRenderType = Omit<Quest, 'genre'>;
 type QuestsRenderProps = {
-	arrayQuests: QuestCardProps[];
+	arrayQuests: QuestsRenderType[];
 };
 export function QuestsRender({ arrayQuests }: QuestsRenderProps) {
 	return (

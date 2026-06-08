@@ -2,8 +2,8 @@ import { GenreFilter } from "@/app/quests/_components/GenreFilter";
 import {
 	filterQuests,
 	Quest,
-} from "@/app/quests/_components/_lib/filterQuests";
-import { quests } from "@/data/quests";
+} from "@/app/quests/_lib/filterQuests";
+import { quests } from "@/app/quests/_data/quests";
 import { QuestsRender } from "@/app/quests/_components/QuestsRender";
 
 export default async function QuestsPage({
