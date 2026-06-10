@@ -45,7 +45,7 @@ export function MobileNav({ featuresNav }: NavigateProps) {
 				/>
 			</button>
 			{isOpen && (
-				<nav className="absolute left-0 top-full z-50 w-full border-t border-border bg-background px-4 py-4 sm:hidden">
+				<nav className="absolute left-0 top-full z-50 w-full  bg-background/70 px-4 py-5 backdrop-blur-md sm:hidden">
 					<div className="flex flex-col gap-4">
 						{featuresNav?.map((item) => {
 							const isActive =

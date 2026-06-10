@@ -6,7 +6,7 @@ import { BookingModal } from "@/app/quests/_components/BookingModal";
 export function QuestBooking() {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<div>
+		<div className="flex justify-center sm:justify-start">
 			<button
 				type="button"
 				onClick={() => {

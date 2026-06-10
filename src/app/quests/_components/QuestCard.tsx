@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Quest } from "@/app/quests/_lib/filterQuests";
-import { QuestInfo, type QuestInfoProps } from "@/components/layout/QuestInfo";
+import {
+	QuestInfo,
+	type QuestInfoProps,
+} from "@/app/quests/_components/QuestInfo";
 import { Fragment } from "react";
 
-type QuestsCardProps = Omit<Quest, 'genre'>;
+type QuestsCardProps = Omit<Quest, "genre">;
 
 export function QuestCard({
 	slug,

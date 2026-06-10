@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 import { aboutQuests } from "@/app/quests/_data/aboutQuests";
 import { Fragment } from "react";
-import { QuestInfo, type QuestInfoProps } from "@/components/layout/QuestInfo";
+import {
+	QuestInfo,
+	type QuestInfoProps,
+} from "@/app/quests/_components/QuestInfo";
 import { QuestBooking } from "@/app/quests/_components/QuestBooking";
 
 type QuestPageProps = {
@@ -44,7 +47,9 @@ export default async function QuestPage({ params }: QuestPageProps) {
 			<div className="relative z-10 mx-auto grid w-full max-w-[1536px] grid-cols-1 px-4 lg:grid-cols-2">
 				<section className="flex flex-col gap-7 lg:col-start-2 lg:px-8">
 					<h3 className="text-accent text-lg pb-4">{quest.genre}</h3>
-					<h1 className="text-9xl font-bold">{quest.title}</h1>
+					<h1 className="sm:text-9xl text-6xl font-bold">
+						{quest.title}
+					</h1>
 					<div className="flex items-center gap-5">
 						{QuestInfoFeatures?.map((item, index) => {
 							return (
