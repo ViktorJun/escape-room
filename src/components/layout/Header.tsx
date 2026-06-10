@@ -8,10 +8,6 @@ export const features: NavigateFeatures[] = [
 		label: "Квести",
 	},
 	{
-		href: "/reviews",
-		label: "Відгуки",
-	},
-	{
 		href: "/contacts",
 		label: "Контакти",
 	},
@@ -23,7 +19,7 @@ export const features: NavigateFeatures[] = [
 
 export function Header() {
 	return (
-		<header className="absolute left-0 top-0 z-50 w-full">
+		<header className="fixed left-0 top-0 z-50 w-full bg-background/30 backdrop-blur-xs">
 			<div className="hidden sm:flex items-center justify-between mx-auto px-3 max-w-[1536px] gap-1 py-3">
 				<Logo height={50} width={135} />
 				<Navigate featuresNav={features} />
